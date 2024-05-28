@@ -1,0 +1,45 @@
+<%- include('../../shared/includes/head', { pageTitle: 'All Products'}) %>
+<link rel="stylesheet" href="/styles/products.css">
+<script src="/scripts/product" defer></script>
+</head>
+<body>
+    <%- include('../../shared/includes/header') %>
+    <main>
+
+        <h1>Products Administration</h1>
+
+        <section>
+            <h2>Manage Product</h2>
+            <p>
+                <a href="/admin/products/new" class="btn">Add Product</a>
+            </p>
+        </section>
+
+        <section>
+            <ul id="product-grid">
+                <% for (const product of products) { %>
+                    <li>
+                        <!-- <article>
+                            <img src="" alt="">
+                            <h2>TITLE</h2>
+                            <div>
+                                <a class="btn btn-alt" href="">View & Edit</a>
+                                <button class="btn btn-alt">Delete</button>
+                            </div>
+                        </article> -->
+        
+                        <!-- <- include('includes/product-item', {product: product}) %> -->
+                        <%- include('../../shared/includes/product-item', {product: product}) %>
+        
+                    </li>
+
+                <% } %>    
+            </ul>
+            
+        </section> 
+    </main>
+
+<%- include('../../shared/includes/footer') %>    
+    
+<!-- </body>
+</html> -->
